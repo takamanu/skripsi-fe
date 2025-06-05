@@ -32,7 +32,7 @@ const items = [
       {
         key: "/upload-file",
         icon: <CloudUploadOutlined />,
-        label: "Upload Dataset",
+        label: "Start Process Dataset",
       },
       {
         key: "/data-visualisation",
@@ -66,15 +66,16 @@ const items = [
         icon: <CheckSquareOutlined />,
         label: "SMOTE",
       },
+    ],
+  },
+  {
+    icon: <FundFilled />,
+    label: "Oversampling dan Undersampling",
+    children: [
       {
         key: "/oversampling-adasyn",
         icon: <CheckSquareOutlined />,
-        label: "ADASYN",
-      },
-      {
-        key: "/oversampling-svm-smote",
-        icon: <CheckSquareOutlined />,
-        label: "SVM-SMOTE",
+        label: "SMOTE-Tomek Link",
       },
     ],
   },
@@ -117,7 +118,7 @@ const Sidebar = (props) => {
       <div className="demo-logo-vertical" />
       <Menu theme="#cc9900" mode="inline">
         <h1 className="text-center text-lg mt-3 mb-3 font-weight-bold">
-          Churn Check
+          SKRIPSI
         </h1>
       </Menu>
       <Menu

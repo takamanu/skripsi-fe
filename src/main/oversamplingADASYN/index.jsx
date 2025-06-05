@@ -6,6 +6,8 @@ import Tabs from "../../component/tabs";
 import TableOversampling from "../../component/tableOversampling";
 import GraphAfter from "../../component/graphAfter";
 import GraphBefore from "../../component/graphBefore";
+import GraphBeforeUnderOver from "../../component/graphBeforeOverUnder";
+import GraphAfterUnderOver from "../../component/graphAfterOverUnder";
 
 const { Header, Content } = Layout;
 const OversamplingADASYN = () => {
@@ -47,18 +49,18 @@ const OversamplingADASYN = () => {
                         className="text-center text-black text-sm-center mb-5"
                         style={{ fontSize: 20 }}
                       >
-                        Sebelum Oversampling
+                        Sebelum Oversampling dan Undersampling
                       </h1>
-                      <GraphBefore />
+                      <GraphBeforeUnderOver />
                     </div>
                     <div className="col-12 col-md-6 mb-4 pt-4">
                       <h1
                         className="text-center text-black text-sm-center mb-5"
                         style={{ fontSize: 20 }}
                       >
-                        Setelah Oversampling
+                        Setelah Oversampling dan Undersampling
                       </h1>
-                      <GraphAfter />
+                      <GraphAfterUnderOver />
                     </div>{" "}
                   </div>
                 </div>

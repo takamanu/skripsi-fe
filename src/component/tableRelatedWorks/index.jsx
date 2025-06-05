@@ -1,27 +1,21 @@
 import React, { useEffect, useState } from "react";
-
 import { Table } from "antd";
 
 const columns = [
   {
-    title: "Ullah (2019)",
-    dataIndex: "Ullah",
-    key: "Ullah",
+    title: "Pradipta et al., 2021",
+    dataIndex: "Pradipta",
+    key: "Pradipta",
   },
   {
-    title: "AlShourbaji (2021)",
-    dataIndex: "AlShourbaji",
-    key: "AlShourbaji",
+    title: "Asniar et al., 2022",
+    dataIndex: "Asniar",
+    key: "Asniar",
   },
   {
-    title: "Pustokhina (2021)",
-    dataIndex: "Pustokhina",
-    key: "Pustokhina",
-  },
-  {
-    title: "Amin (2019)",
-    dataIndex: "Amin",
-    key: "Amin",
+    title: "Thejas et al., 2022",
+    dataIndex: "Thejas",
+    key: "Thejas",
   },
   {
     title: "Proposed Method (2023)",
@@ -29,24 +23,27 @@ const columns = [
     key: "Proposed",
   },
 ];
+
 const TablesRelatedWorks = () => {
-  const [proposed, setProposed] = useState([]);
+  const [proposed, setProposed] = useState(0);
   useEffect(() => {
     const proposedAcc = JSON.parse(localStorage.getItem("acc_SVM-SMOTE"));
-    setProposed(proposedAcc);
+    setProposed(proposedAcc || 0);
   }, []);
+
   return (
     <Table
       columns={columns}
       dataSource={[
         {
-          Ullah: [0.8863 * 100] + "%",
-          AlShourbaji: [0.94 * 100] + "%",
-          Pustokhina: [0.94 * 100] + "%",
-          Amin: [0.927 * 100] + "%",
-          Proposed: [proposed * 100] + "%",
+          key: "1",
+          Pradipta: (0.8125 * 100).toFixed(2) + "%",
+          Asniar: (0.7513 * 100).toFixed(2) + "%",
+          Thejas: (0.7586 * 100).toFixed(2) + "%",
+          Proposed: (proposed * 100).toFixed(2) + "%",
         },
       ]}
+      pagination={false}
     />
   );
 };

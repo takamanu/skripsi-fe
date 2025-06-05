@@ -43,28 +43,22 @@ const GraphRelatedWorks = (props) => {
     labels: ["Perbandingan Akurasi dengan Peneliti Terdahulu"],
     datasets: [
       {
-        label: "Ullah (2019)",
-        data: [0.8863 * 100],
-        borderColor: "#0099cc",
-        backgroundColor: "#0099cc",
-      },
-      {
-        label: "AlShourbaji (2021)",
-        data: [0.94 * 100],
+        label: "Pradipta et al., 2021",
+        data: [0.8125 * 100],
         borderColor: "#339966",
         backgroundColor: "#339966",
       },
       {
-        label: "Pustokhina (2021)",
-        data: [0.94 * 100],
-        borderColor: "#777777",
-        backgroundColor: "#777777",
+        label: "Asniar et al., 2022",
+        data: [0.7513 * 100],
+        borderColor: "#0099cc",
+        backgroundColor: "#0099cc",
       },
       {
-        label: "Amin (2019)",
-        data: [0.927 * 100],
-        borderColor: "#cc9900",
-        backgroundColor: "#cc9900",
+        label: "Thejas et al., 2022",
+        data: [0.7586 * 100],
+        borderColor: "#777777",
+        backgroundColor: "#777777",
       },
       {
         label: "Proposed Method (2023)",

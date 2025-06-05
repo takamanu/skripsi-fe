@@ -23,7 +23,8 @@ const App = () => {
     // "accXGBoostAndSmoteTomek": 0.864406779661017,
 
       localStorage.clear();
-      localStorage.setItem("Dataset", JSON.stringify(data.datasetBefore));
+      localStorage.setItem("Dataset", JSON.stringify(data.datasetAfter));
+      localStorage.setItem("DatasetAfter", JSON.stringify(data.datasetBefore));
       localStorage.setItem("DatasetLabelEncode", JSON.stringify(data.dataLabelEncode));
       localStorage.setItem("acc_SMOTE", JSON.stringify(data.accXGBoostAndSmote));
       localStorage.setItem("acc_SVM-SMOTE", JSON.stringify(data.accXGBoostAndSmoteTomek));

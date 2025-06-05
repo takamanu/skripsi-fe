@@ -31,9 +31,9 @@ export const options = {
     },
   },
 };
-const GraphAfter = () => {
+const GraphBeforeUnderOver = () => {
   const data = {
-    labels: ["Hasil Setelah Oversampling"],
+    labels: ["Hasil Sebelum Oversampling dan Undersampling"],
     datasets: [
       {
         label: "Outcome 0",
@@ -44,7 +44,7 @@ const GraphAfter = () => {
       },
       {
         label: "Outcome 1",
-        data: [385],
+        data: [209],
         borderColor: "#339966",
         backgroundColor: "#339966",
       },
@@ -57,4 +57,4 @@ const GraphAfter = () => {
   );
 };
 
-export default GraphAfter;
+export default GraphBeforeUnderOver;
