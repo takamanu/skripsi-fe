@@ -4,7 +4,7 @@ import { Button, message } from "antd";
 const App = () => {
   const handleStart = async () => {
     try {
-      const response = await fetch("http://172.29.93.27:5000/start", {
+      const response = await fetch("http://127.0.0.1:5000/start", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -19,8 +19,8 @@ const App = () => {
 
       message.success("Dataset processed successfully.");
       // accXGBoost": 0.7651006711409396,
-    // "accXGBoostAndSmote": 0.8181818181818182,
-    // "accXGBoostAndSmoteTomek": 0.864406779661017,
+      // "accXGBoostAndSmote": 0.8181818181818182,
+      // "accXGBoostAndSmoteTomek": 0.864406779661017,
 
       localStorage.clear();
       localStorage.setItem("Dataset", JSON.stringify(data.datasetAfter));

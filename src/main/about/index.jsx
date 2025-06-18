@@ -38,12 +38,12 @@ export default function About() {
     {
       logo: <FundFilled />,
       title: "Oversampling",
-      desc: "Menu Oversampling menampilkan perbandingan mengenai informasi data dan visualisasi sebelum dan sesudah dilakukannya oversampling. Metode oversampling yang digunakan diantaranya SMOTE, ADASYN, dan SVM-SMOTE. ",
+      desc: "Menu Oversampling menampilkan perbandingan mengenai informasi data dan visualisasi sebelum dan sesudah dilakukannya oversampling. Metode oversampling yang digunakan diantaranya SMOTE, dan SMOTE-Tomek Link. ",
     },
     {
       logo: <AreaChartOutlined />,
       title: "Evaluation Performance",
-      desc: "Menu Evaluasi Performa berisi mengenai informasi akurasi dan confusion matrix setelah dilakukannya proses Oversampling SMOTE, ADASYN, dan SVM-SMOTE serta Random Forest Klasifikasi.",
+      desc: "Menu Evaluasi Performa berisi mengenai informasi akurasi dan confusion matrix setelah dilakukannya proses Oversampling SMOTE, dan SMOTE-Tomek Link serta Random Forest Klasifikasi.",
     },
     {
       logo: <GoldenFilled />,

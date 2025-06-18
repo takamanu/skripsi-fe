@@ -50,11 +50,11 @@ const items = [
         icon: <ClearOutlined />,
         label: "Data Cleaning",
       },
-      {
-        key: "/data-transform",
-        icon: <FileSyncOutlined />,
-        label: "Data Transform",
-      },
+      // {
+      //   key: "/data-transform",
+      //   icon: <FileSyncOutlined />,
+      //   label: "Data Transform",
+      // },
     ],
   },
   {
@@ -73,7 +73,7 @@ const items = [
     label: "Oversampling dan Undersampling",
     children: [
       {
-        key: "/oversampling-adasyn",
+        key: "/oversampling-smote-tomek",
         icon: <CheckSquareOutlined />,
         label: "SMOTE-Tomek Link",
       },
