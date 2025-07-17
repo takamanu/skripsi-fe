@@ -96,6 +96,11 @@ const items = [
     ],
   },
   {
+    key: "/predict-data",
+    icon: <GoldenFilled />,
+    label: "Predict Data",
+  },
+  {
     key: "/related-works",
     icon: <GoldenFilled />,
     label: "Related Works",

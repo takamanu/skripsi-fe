@@ -13,6 +13,7 @@ import ConfusionMatrix from "./main/confusionMatrix/index.jsx";
 import RelatedWorks from "./main/relatedWorks/index.jsx";
 import OversamplingADASYN from "./main/oversamplingADASYN/index.jsx";
 import OversamplingSVMSMOTE from "./main/oversamplinSVMSMOTE/index.jsx";
+import PredictData from "./main/predictData/index.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/akurasi" element={<Accuracy />} />{" "}
         <Route path="/oversampling-smote" element={<OversamplingSMOTE />} />{" "}
         <Route path="/oversampling-smote-tomek" element={<OversamplingADASYN />} />{" "}
+        <Route path="/predict-data" element={<PredictData />} />{" "}
         <Route
           path="/oversampling-svm-smote"
           element={<OversamplingSVMSMOTE />}
