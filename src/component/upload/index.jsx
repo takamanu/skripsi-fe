@@ -4,7 +4,7 @@ import { Button, message } from "antd";
 const App = () => {
   const handleStart = async () => {
     try {
-      const response = await fetch("http://172.29.93.27:5000/start", {
+      const response = await fetch("https://skripsi-be-production-07bd.up.railway.app/start", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
