@@ -25,7 +25,7 @@ function App() {
         <Route path="/data-transform" element={<DataTransform />} />{" "}
         <Route path="/akurasi" element={<Accuracy />} />{" "}
         <Route path="/oversampling-smote" element={<OversamplingSMOTE />} />{" "}
-        <Route path="/oversampling-adasyn" element={<OversamplingADASYN />} />{" "}
+        <Route path="/oversampling-smote-tomek" element={<OversamplingADASYN />} />{" "}
         <Route
           path="/oversampling-svm-smote"
           element={<OversamplingSVMSMOTE />}

@@ -19,8 +19,8 @@ const App = () => {
 
       message.success("Dataset processed successfully.");
       // accXGBoost": 0.7651006711409396,
-    // "accXGBoostAndSmote": 0.8181818181818182,
-    // "accXGBoostAndSmoteTomek": 0.864406779661017,
+      // "accXGBoostAndSmote": 0.8181818181818182,
+      // "accXGBoostAndSmoteTomek": 0.864406779661017,
 
       localStorage.clear();
       localStorage.setItem("Dataset", JSON.stringify(data.datasetAfter));
