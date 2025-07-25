@@ -40,7 +40,7 @@ const ConfusionMatrix = () => {
                   Confusion Matrix Algoritma XG Boost
                 </h1>
                 <img
-                  src="http://127.0.0.1:5000/images/ConfusionMatrixXGBoost.png"
+                  src="http://srv924742.hstgr.cloud:5000/images/ConfusionMatrixXGBoost.png"
                   alt=""
                   srcset=""
                   style={{ width: 500, marginBottom: 20 }}
@@ -57,7 +57,7 @@ const ConfusionMatrix = () => {
                   Confusion Matrix Algoritma SMOTE & XG Boost
                 </h1>
                 <img
-                  src="http://127.0.0.1:5000/images/ConfusionMatrixSMOTEAndXGBoost.png"
+                  src="http://srv924742.hstgr.cloud:5000/images/ConfusionMatrixSMOTEAndXGBoost.png"
                   alt=""
                   srcset=""
                   style={{ width: 500, marginBottom: 20 }}
@@ -74,7 +74,7 @@ const ConfusionMatrix = () => {
                   Confusion Matrix Algoritma SMOTE-Tomek Link & XG Boost
                 </h1>
                 <img
-                  src="http://127.0.0.1:5000/images/ConfusionMatrixSMOTETomekLinkAndXGBoost.png"
+                  src="http://srv924742.hstgr.cloud:5000/images/ConfusionMatrixSMOTETomekLinkAndXGBoost.png"
                   alt=""
                   srcset=""
                   style={{ width: 500, marginBottom: 20 }}

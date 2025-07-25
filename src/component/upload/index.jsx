@@ -4,7 +4,7 @@ import { Button, message } from "antd";
 const App = () => {
   const handleStart = async () => {
     try {
-      const response = await fetch("https://skripsi-be-production-07bd.up.railway.app/start", {
+      const response = await fetch("http://srv924742.hstgr.cloud:5000/start", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

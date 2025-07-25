@@ -21,7 +21,7 @@ const DataVisualisation = () => {
             Visualisasi Data Sebelum Data Cleaning
           </h1>
           <img
-            src="http://127.0.0.1:5000/images/Before Data Cleaning.png"
+            src="http://srv924742.hstgr.cloud:5000/images/Before Data Cleaning.png"
             alt=""
             srcset=""
             style={{ width: 500 }}
@@ -37,7 +37,7 @@ const DataVisualisation = () => {
             Visualisasi Data Setelah Data Cleaning
           </h1>
           <img
-            src="http://127.0.0.1:5000/images/After Data Cleaning.png"
+            src="http://srv924742.hstgr.cloud:5000/images/After Data Cleaning.png"
             alt=""
             srcset=""
             style={{ width: 500 }}
