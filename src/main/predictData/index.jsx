@@ -74,87 +74,87 @@ const PredictData = () => {
   };
 
   return (
+    // <Layout>
+    // <Sidebar collapsed={collapsed} />
     <Layout>
-      <Sidebar collapsed={collapsed} />
-      <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
-            }}
-          />
-        </Header>
-        <Content style={{ padding: "24px", background: "#f4f6f8", minHeight: "100vh" }}>
-          <Card
-            style={{
-              maxWidth: 600,
-              margin: "auto",
-              borderRadius: 12,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-            }}
-          >
-            <Title level={3} style={{ textAlign: "center", marginBottom: 8 }}>
-              Prediksi Risiko Diabetes
-            </Title>
-            <Text type="secondary" style={{ display: "block", textAlign: "center", marginBottom: 24 }}>
-              Masukkan informasi dasar Anda
-            </Text>
+      <Header style={{ padding: 0, background: colorBgContainer }}>
+        {/* <Button
+          type="text"
+          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+          onClick={() => setCollapsed(!collapsed)}
+          style={{
+            fontSize: "16px",
+            width: 64,
+            height: 64,
+          }}
+        /> */}
+      </Header>
+      <Content style={{ padding: "24px", background: "#f4f6f8", minHeight: "100vh" }}>
+        <Card
+          style={{
+            maxWidth: 600,
+            margin: "auto",
+            borderRadius: 12,
+            boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+          }}
+        >
+          <Title level={3} style={{ textAlign: "center", marginBottom: 8 }}>
+            Prediksi Risiko Diabetes
+          </Title>
+          <Text type="secondary" style={{ display: "block", textAlign: "center", marginBottom: 24 }}>
+            Masukkan informasi dasar Anda
+          </Text>
 
-            <Form layout="vertical" onFinish={onFinish}>
-              <Row gutter={[16, 16]}>
-                {[
-                  { name: "Age", label: "Usia (tahun)", min: 1 },
-                  { name: "Weight", label: "Berat (kg)", min: 1 },
-                  { name: "Height", label: "Tinggi (cm)", min: 50 },
-                  { name: "Glucose", label: "Gula Darah (mg/dL)", min: 1 },
-                  { name: "BloodPressure", label: "Tekanan Darah (mmHg)", min: 1 },
-                  { name: "Pregnancies", label: "Jumlah Kehamilan", min: 0 },
-                ].map((field) => (
-                  <Col xs={24} sm={12} key={field.name}>
-                    <Form.Item
-                      label={field.label}
-                      name={field.name}
-                      rules={[{ required: true, message: `${field.label} wajib diisi` }]}
-                    >
-                      <InputNumber
-                        min={field.min}
-                        step={field.step || 1}
-                        className="w-100"
-                      />
-                    </Form.Item>
-                  </Col>
-                ))}
-              </Row>
+          <Form layout="vertical" onFinish={onFinish}>
+            <Row gutter={[16, 16]}>
+              {[
+                { name: "Age", label: "Usia (tahun)", min: 1 },
+                { name: "Weight", label: "Berat (kg)", min: 1 },
+                { name: "Height", label: "Tinggi (cm)", min: 50 },
+                { name: "Glucose", label: "Gula Darah (mg/dL)", min: 1 },
+                { name: "BloodPressure", label: "Tekanan Darah (mmHg)", min: 1 },
+                { name: "Pregnancies", label: "Jumlah Kehamilan", min: 0 },
+              ].map((field) => (
+                <Col xs={24} sm={12} key={field.name}>
+                  <Form.Item
+                    label={field.label}
+                    name={field.name}
+                    rules={[{ required: true, message: `${field.label} wajib diisi` }]}
+                  >
+                    <InputNumber
+                      min={field.min}
+                      step={field.step || 1}
+                      className="w-100"
+                    />
+                  </Form.Item>
+                </Col>
+              ))}
+            </Row>
 
-              <Button
-                type="primary"
-                htmlType="submit"
-                loading={loading}
-                style={{ width: "100%", marginTop: 12 }}
-              >
-                Prediksi
-              </Button>
-            </Form>
+            <Button
+              type="primary"
+              htmlType="submit"
+              loading={loading}
+              style={{ width: "100%", marginTop: 12 }}
+            >
+              Prediksi
+            </Button>
+          </Form>
 
-            {result && (
-              <div style={{ marginTop: 24, textAlign: "center" }}>
-                <Title level={4}>
-                  Hasil Prediksi:{" "}
-                  <span style={{ color: result === "Diabetes" ? "red" : "green" }}>
-                    {result}
-                  </span>
-                </Title>
-              </div>
-            )}
-          </Card>
-        </Content>
-      </Layout>
+          {result && (
+            <div style={{ marginTop: 24, textAlign: "center" }}>
+              <Title level={4}>
+                Hasil Prediksi:{" "}
+                <span style={{ color: result === "Diabetes" ? "red" : "green" }}>
+                  {result}
+                </span>
+              </Title>
+            </div>
+          )}
+        </Card>
+      </Content>
     </Layout>
+    // </Layout>
   );
 };
 

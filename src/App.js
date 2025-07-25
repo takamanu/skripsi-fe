@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Dashboard />} />{" "}
+        <Route path="/" element={<PredictData />} />{" "}
         <Route path="/upload-file" element={<Data />} />{" "}
         <Route path="/data-visualisation" element={<DataVisualisation />} />{" "}
         <Route path="/data-cleaning" element={<DataCleaning />} />{" "}
