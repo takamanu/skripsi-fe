@@ -1,9 +1,24 @@
 import React, { useState } from "react";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { Layout, Button, theme, InputNumber, Form, Row, Col, message } from "antd";
+import {
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+} from "@ant-design/icons";
+import {
+  Layout,
+  Button,
+  theme,
+  InputNumber,
+  Form,
+  Row,
+  Col,
+  Card,
+  message,
+  Typography,
+} from "antd";
 import Sidebar from "../../component/sidebar";
 
 const { Header, Content } = Layout;
+const { Title, Text } = Typography;
 
 const PredictData = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -18,13 +33,29 @@ const PredictData = () => {
     setLoading(true);
     setResult(null);
 
+    // Hitung BMI
+    const heightMeter = values.Height / 100; // cm to meter
+    const bmi = (values.Weight / (heightMeter * heightMeter)).toFixed(1);
+
+    // Data final untuk API
+    const requestData = {
+      Pregnancies: values.Pregnancies || 0,
+      Glucose: values.Glucose,
+      BloodPressure: values.BloodPressure,
+      SkinThickness: 20, // default
+      Insulin: 85, // default
+      BMI: parseFloat(bmi),
+      DiabetesPedigreeFunction: 0.5, // default
+      Age: values.Age,
+    };
+
     try {
-      const response = await fetch("http://127.0.0.1:5000/predict", {
+      const response = await fetch("https://api-pdb.goodbuy.id/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(requestData),
       });
 
       if (!response.ok) {
@@ -58,22 +89,33 @@ const PredictData = () => {
             }}
           />
         </Header>
-        <Content style={{ minHeight: 700 }}>
-          <div className="p-5">
-            <h2 className="mb-4">Form Prediksi Diabetes</h2>
+        <Content style={{ padding: "24px", background: "#f4f6f8", minHeight: "100vh" }}>
+          <Card
+            style={{
+              maxWidth: 600,
+              margin: "auto",
+              borderRadius: 12,
+              boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+            }}
+          >
+            <Title level={3} style={{ textAlign: "center", marginBottom: 8 }}>
+              Prediksi Risiko Diabetes
+            </Title>
+            <Text type="secondary" style={{ display: "block", textAlign: "center", marginBottom: 24 }}>
+              Masukkan informasi dasar Anda
+            </Text>
+
             <Form layout="vertical" onFinish={onFinish}>
-              <Row gutter={16}>
+              <Row gutter={[16, 16]}>
                 {[
-                  { name: "Pregnancies", label: "Pregnancies", min: 0 },
-                  { name: "Glucose", label: "Glucose", min: 1 },
-                  { name: "BloodPressure", label: "Blood Pressure", min: 1 },
-                  { name: "SkinThickness", label: "Skin Thickness", min: 1 },
-                  { name: "Insulin", label: "Insulin", min: 1 },
-                  { name: "BMI", label: "BMI", min: 1, step: 0.1 },
-                  { name: "DiabetesPedigreeFunction", label: "Diabetes Pedigree Function", min: 0, step: 0.01 },
-                  { name: "Age", label: "Age", min: 1 },
+                  { name: "Age", label: "Usia (tahun)", min: 1 },
+                  { name: "Weight", label: "Berat (kg)", min: 1 },
+                  { name: "Height", label: "Tinggi (cm)", min: 50 },
+                  { name: "Glucose", label: "Gula Darah (mg/dL)", min: 1 },
+                  { name: "BloodPressure", label: "Tekanan Darah (mmHg)", min: 1 },
+                  { name: "Pregnancies", label: "Jumlah Kehamilan", min: 0 },
                 ].map((field) => (
-                  <Col span={8} key={field.name}>
+                  <Col xs={24} sm={12} key={field.name}>
                     <Form.Item
                       label={field.label}
                       name={field.name}
@@ -88,21 +130,28 @@ const PredictData = () => {
                   </Col>
                 ))}
               </Row>
-              <Button type="primary" htmlType="submit" loading={loading}>
+
+              <Button
+                type="primary"
+                htmlType="submit"
+                loading={loading}
+                style={{ width: "100%", marginTop: 12 }}
+              >
                 Prediksi
               </Button>
             </Form>
 
             {result && (
-              <div className="mt-4">
-                <h3>Hasil Prediksi:{" "}
+              <div style={{ marginTop: 24, textAlign: "center" }}>
+                <Title level={4}>
+                  Hasil Prediksi:{" "}
                   <span style={{ color: result === "Diabetes" ? "red" : "green" }}>
                     {result}
                   </span>
-                </h3>
+                </Title>
               </div>
             )}
-          </div>
+          </Card>
         </Content>
       </Layout>
     </Layout>

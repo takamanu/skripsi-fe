@@ -4,7 +4,7 @@ import { Button, message } from "antd";
 const App = () => {
   const handleStart = async () => {
     try {
-      const response = await fetch("http://srv924742.hstgr.cloud:5000/start", {
+      const response = await fetch("https://api-pdb.goodbuy.id/start", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
